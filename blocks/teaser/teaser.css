@@ -6,18 +6,23 @@
   display: flex;
   gap: 30px;
 }
+
 .teaser.left > div {
   flex-direction: row;
 }
+
 .teaser.right > div {
   flex-direction: row;
 }
+
 .teaser.top > div {
   flex-direction: column;
 }
+
 .teaser.down > div {
   flex-direction: column-reverse;
 }
+
 .teaser.left img,
 .teaser.right img
 {
@@ -25,6 +30,7 @@
   width: 100%;
   height: auto;
 }
+
 .teaser.top img,
 .teaser.down img {
 display: block;
@@ -32,13 +38,15 @@ display: block;
   height: auto;
 
 }
+
 .teaser.left ul,
 .teaser.right ul,
 .teaser.top ul,
 .teaser.down ul {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
+
 .teaser.left li,
 .teaser.right li,
 .teaser.top li,
@@ -46,19 +54,21 @@ display: block;
   list-style: none;
   position: relative;
 }
+
 .teaser.left li:not(:last-child),
 .teaser.right li:not(:last-child),
 .teaser.top li:not(:last-child),
 .teaser.down li:not(:last-child) {
   padding-left: 40px;
 }
+
 .teaser.left li:not(:last-child)::before,
 .teaser.right li:not(:last-child)::before,
 .teaser.top li:not(:last-child)::before,
 .teaser.down li:not(:last-child)::before {
   content: "✓";
   position: absolute;
-  left: 0px;
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 20px;
@@ -80,13 +90,14 @@ display: block;
   position: relative;
   padding-left: 40px;
 }
+
 .teaser.left li:last-child > p:first-child::before,
 .teaser.right li:last-child > p:first-child::before,
 .teaser.top li:last-child > p:first-child::before,
 .teaser.down li:last-child > p:first-child::before {
   content: "✓";
   position: absolute;
-  left: 0px;
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 20px;
@@ -114,21 +125,6 @@ display: block;
   transition: all 0.3s ease;
 }
 
-.teaser.left li:last-child > p:last-child > a:hover,
-.teaser.right li:last-child > p:last-child > a:hover,
-.teaser.top li:last-child > p:last-child > a:hover,
-.teaser.down li:last-child > p:last-child > a:hover {
-  background: linear-gradient(104deg, #6d29b6, #005dba);
-  color: #fff;
-}
-
-.teaser.left li:last-child > p:last-child > strong,
-.teaser.right li:last-child > p:last-child > strong,
-.teaser.top li:last-child > p:last-child > strong,
-.teaser.down li:last-child > p:last-child > strong {
-  margin-left: 20px;
-}
-
 .teaser.left li:last-child > p:last-child > strong a,
 .teaser.right li:last-child > p:last-child > strong a,
 .teaser.top li:last-child > p:last-child > strong a,
@@ -148,12 +144,28 @@ display: block;
   color: #005dba;
 }
 
+.teaser.left li:last-child > p:last-child > a:hover,
+.teaser.right li:last-child > p:last-child > a:hover,
+.teaser.top li:last-child > p:last-child > a:hover,
+.teaser.down li:last-child > p:last-child > a:hover {
+  background: linear-gradient(104deg, #6d29b6, #005dba);
+  color: #fff;
+}
+
+.teaser.left li:last-child > p:last-child > strong,
+.teaser.right li:last-child > p:last-child > strong,
+.teaser.top li:last-child > p:last-child > strong,
+.teaser.down li:last-child > p:last-child > strong {
+  margin-left: 20px;
+}
+
 .teaser.left li:last-child > p:last-child > strong a:hover,
 .teaser.right li:last-child > p:last-child > strong a:hover,
 .teaser.top li:last-child > p:last-child > strong a:hover,
 .teaser.down li:last-child > p:last-child > strong a:hover {
   color: #6d29b6;
 }
+
 .teaser.left li:last-child > p:last-child > strong a:hover::after,
 .teaser.right li:last-child > p:last-child > strong a:hover::after,
 .teaser.top li:last-child > p:last-child > strong a:hover::after,
