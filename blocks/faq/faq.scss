@@ -8,7 +8,7 @@
     align-items: center;
   }
 
-  &__image {
+  &-image {
     width: 100%;
 
     picture,
@@ -19,15 +19,15 @@
     }
   }
 
-  &__content {
+  &-content {
     width: 100%;
   }
 
-  &__heading {
+  &-heading {
     margin: 0 0 30px;
   }
 
-  &__item {
+  &-item {
     border-bottom: 1px solid #e0e0e0;
 
     &:first-of-type {
@@ -35,7 +35,7 @@
     }
   }
 
-  &__question {
+  &-question {
     position: relative;
     margin: 0;
     padding: 18px 50px 18px 0;
@@ -54,19 +54,19 @@
     }
   }
 
-  &__answer {
+  &-answer {
     display: none;
     margin: 0;
     padding: 0 50px 18px 0;
     line-height: 1.6;
   }
 
-  &__item--active {
-    .faq__answer {
+  &-item-active {
+    .faq-answer {
       display: block;
     }
 
-    .faq__question::after {
+    .faq-question::after {
       content: '−';
     }
   }

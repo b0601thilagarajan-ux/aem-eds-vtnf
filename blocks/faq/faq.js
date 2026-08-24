@@ -3,15 +3,15 @@ export default function decorate(block) {
   if (!row) return;
   const [image, content] = row.children;
   if (!image || !content) return;
-  image.classList.add('faq__image');
-  content.classList.add('faq__content');
+  image.classList.add('faq-image');
+  content.classList.add('faq-content');
   const items = [];
   let item;
   [...content.children].forEach((element) => {
     if (element.matches('h3')) {
       item = document.createElement('div');
-      item.className = 'faq__item';
-      element.classList.add('faq__question');
+      item.className = 'faq-item';
+      element.classList.add('faq-question');
       element.setAttribute('role', 'button');
       element.setAttribute('tabindex', '0');
       element.setAttribute('aria-expanded', 'false');
@@ -20,16 +20,16 @@ export default function decorate(block) {
       items.push(item);
     }
     if (element.matches('p') && item) {
-      element.classList.add('faq__answer');
+      element.classList.add('faq-answer');
       item.append(element);
     }
   });
   if (!items.length) return;
   const toggle = (current) => {
-    const active = current.classList.contains('faq__item--active');
+    const active = current.classList.contains('faq-item-active');
     items.forEach((faqItem) => {
-      faqItem.classList.toggle('faq__item--active', faqItem === current && !active);
-      faqItem.querySelector('.faq__question')
+      faqItem.classList.toggle('faq-item-active', faqItem === current && !active);
+      faqItem.querySelector('.faq-question')
         ?.setAttribute(
           'aria-expanded',
           String(faqItem === current && !active),
@@ -38,7 +38,7 @@ export default function decorate(block) {
   };
   toggle(items[0]);
   items.forEach((faqItem) => {
-    const question = faqItem.querySelector('.faq__question');
+    const question = faqItem.querySelector('.faq-question');
     question?.addEventListener('click', () => toggle(faqItem));
     question?.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' || event.key === ' ') {
