@@ -2,11 +2,11 @@ export default function decorate(block) {
   const elements = [...block.children];
   if (!elements.length) return;
   const layout = document.createElement('div');
-  layout.className = 'faq-split__layout';
+  layout.className = 'faq-split-layout';
   const imageWrapper = document.createElement('div');
-  imageWrapper.className = 'faq-split__image';
+  imageWrapper.className = 'faq-split-image';
   const contentWrapper = document.createElement('div');
-  contentWrapper.className = 'faq-split__content';
+  contentWrapper.className = 'faq-split-content';
   const picture = block.querySelector('picture');
   if (picture) {
     imageWrapper.append(picture);
@@ -17,15 +17,15 @@ export default function decorate(block) {
   contentElements.forEach((element) => {
     if (element.matches('h3')) {
       currentItem = document.createElement('div');
-      currentItem.className = 'faq-split__item';
-      element.classList.add('faq-split__question');
+      currentItem.className = 'faq-split-item';
+      element.classList.add('faq-split-question');
       element.setAttribute('role', 'button');
       element.setAttribute('tabindex', '0');
       element.setAttribute('aria-expanded', 'false');
       currentItem.append(element);
       items.push(currentItem);
     } else if (element.matches('p') && currentItem) {
-      element.classList.add('faq-split__answer');
+      element.classList.add('faq-split-answer');
       currentItem.append(element);
     }
   });
@@ -35,13 +35,13 @@ export default function decorate(block) {
   block.replaceChildren(layout);
   const toggle = (activeItem) => {
     const isActive = activeItem.classList.contains(
-      'faq-split__item--active',
+      'faq-split-item-active',
     );
     items.forEach((item) => {
-      const question = item.querySelector('.faq-split__question');
+      const question = item.querySelector('.faq-split-question');
       const shouldOpen = item === activeItem && !isActive;
       item.classList.toggle(
-        'faq-split__item--active',
+        'faq-split-item-active',
         shouldOpen,
       );
       question?.setAttribute(
@@ -52,7 +52,7 @@ export default function decorate(block) {
   };
   toggle(items[0]);
   items.forEach((item) => {
-    const question = item.querySelector('.faq-split__question');
+    const question = item.querySelector('.faq-split-question');
     question?.addEventListener('click', () => {
       toggle(item);
     });
