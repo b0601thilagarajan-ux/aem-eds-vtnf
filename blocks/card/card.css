@@ -5,7 +5,6 @@
   gap: 30px;
   counter-reset: card-counter;
 }
-
 .card .section-card {
   position: relative;
   counter-increment: card-counter;
@@ -16,11 +15,10 @@
   border-radius: 12px;
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 5%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   padding: 30px 6px 25px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .card .section-card::before {
   content: counter(card-counter, decimal-leading-zero);
   position: absolute;
@@ -32,13 +30,11 @@
   opacity: 0.4;
   transition: opacity 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
-
 .card .section-card:hover::before {
   opacity: 1;
   color: #f00;
   transform: scale(1.1);
 }
-
 .card .section-card::after {
   content: "";
   position: absolute;
@@ -49,11 +45,9 @@
   background-color: #f00;
   transition: width 0.4s ease-in-out;
 }
-
 .card .section-card:hover::after {
   width: 100%;
 }
-
 .card .section-title {
   display: flex;
   flex-direction: column;
@@ -67,7 +61,6 @@
   color: #111;
   width: 100%;
 }
-
 .card .section-title-picture {
   display: flex;
   justify-content: center;
@@ -76,14 +69,13 @@
   padding-bottom: 15px;
   background-color: transparent;
 }
-
 .card .section-title-picture-img {
   display: block;
   width: 120px;
   height: 120px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
-
 .card .section-text {
   text-align: center;
   margin: 10px 0 0;
@@ -91,7 +83,6 @@
   line-height: 1.5;
   color: #444;
 }
-
 .card .section-image {
   text-align: center;
-}
+}/*# sourceMappingURL=card.css.map */
